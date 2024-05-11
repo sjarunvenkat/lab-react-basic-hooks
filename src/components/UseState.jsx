@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 
 function UseState() {
   //progression 1
-  const [presentAge, updateAge] = useState(21);
+  // const [presentAge, updateAge] = useState(21);
 
   //progression 2
-  const [presentAgeSib, updateAgeSib] = useState(10);
+  // const [presentAgeSib, updateAgeSib] = useState(10);
 
   //   const handleAge = (value) => {
   //     updateAge(presentAge + 1);
@@ -25,12 +25,19 @@ function UseState() {
   //   const { presentAge, presentAgeSib } = state;
 
   // progression 5
+  // useEffect(() => {
+  //   alert(`age has been changed ${presentAge}`);
+  // }, [presentAge]);
+
+  const [text, updateText] = useState("");
+  const [likes, updateLikes] = useState(0);
+
   useEffect(() => {
-    alert(`age has been changed ${presentAge}`);
-  }, [presentAge]);
+    alert(`content has been changed`);
+  }, [text]);
 
   return (
-    <div className="AgePage">
+    <div className="Page">
       {/* <h1>My Current Age is {presentAge}</h1>
       <h1>My Sibiling age is {presentAgeSib}</h1>
       <button onClick={handleAge}> Add age </button>
@@ -54,7 +61,7 @@ function UseState() {
       </button> */}
 
       {/* progression 4 */}
-      <h1>My Current Age is {presentAge}</h1>
+      {/* <h1>My Current Age is {presentAge}</h1>
       <h1>My Sibiling age is {presentAgeSib}</h1>
       <button onClick={() => updateAge((presentAge) => presentAge + 1)}>
         {" "}
@@ -65,7 +72,20 @@ function UseState() {
       >
         {" "}
         Add Sibling age
+      </button> */}
+      <p>{text}</p>
+      <button
+        onClick={() =>
+          updateText(
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est qui voluptatibus iure hic architecto, tenetur impedit eum culpa possimus quis maiores autem aliquam sint corporis, ad tempora corrupti? Recusandae quisquam, fuga deserunt beatae, praesentium molestiae minus quaerat, iure nesciunt harum nulla facere voluptatibus cumque? Ipsa nostrum cumque deleniti voluptatibus. Quasi?"
+          )
+        }
+      >
+        Content
       </button>
+
+      <p>{likes}</p>
+      <button onClick={() => updateLikes((likes) => likes + 1)}>Likes</button>
     </div>
   );
 }
