@@ -1,0 +1,16 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.AgePage{
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+button{
+  margin: 20px;
+  padding: 10px;
+}
